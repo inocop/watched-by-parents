@@ -1,0 +1,53 @@
+{
+  "language": [
+    {
+      "name": "Ruby",
+      "ext": ".rb",
+      "credit": "\"Yukihiro Matsumoto\" by Cep21 is licensed under public domain",
+      "link": "https://commons.wikimedia.org/wiki/File:Yukihiro_Matsumoto.JPG",
+      "image": "Yukihiro_Matsumoto.jfif"
+    },
+    {
+      "name": "Python",
+      "ext": ".py",
+      "credit": "\"Guido van Rossum\" by Maartenschrijft is licensed under CC BY-SA 2.0",
+      "link": "https://commons.wikimedia.org/wiki/File:Guido_van_Rossum_OSCON_2006_cropped.png",
+      "image": ""
+    },
+    {
+      "name": "PHP",
+      "ext": ".php",
+      "credit": "\"Rasmus Lerdorf\" by Austin512 is licensed under CC BY-SA 2.0",
+      "link": "https://commons.wikimedia.org/wiki/File:Rasmus_Lerdorf_cropped.jpg",
+      "image": ""
+    },
+    {
+      "name": "C#",
+      "ext": ".cs",
+      "credit": "\"Anders Hejlsberg\" by DBegley is licensed under CC BY 2.0",
+      "link": "https://commons.wikimedia.org/wiki/File:Anders_Hejlsberg.jpg",
+      "image": ""
+    },
+    {
+      "name": "TypeScript",
+      "ext": ".ts",
+      "credit": "\"Anders Hejlsberg\" by DBegley is licensed under CC BY 2.0",
+      "link": "https://commons.wikimedia.org/wiki/File:Anders_Hejlsberg.jpg",
+      "image": ""
+    },
+    {
+      "name": "JavaScript",
+      "ext": ".js",
+      "credit": "\"Brendan Eich\" by Darcy Padilla is licensed under CC BY-SA 3.0",
+      "link": "https://commons.wikimedia.org/wiki/File:Brendan_Eich_Mozilla_Foundation_official_photo.jpg",
+      "image": ""
+    },
+    {
+      "name": "Java",
+      "ext": ".java",
+      "credit": "\"James Gosling\" by Swoon~commonswiki is licensed under CC BY-SA 3.0",
+      "link": "https://commons.wikimedia.org/wiki/File:James_Gosling_2005.jpg",
+      "image": ""
+    }
+  ]
+}
