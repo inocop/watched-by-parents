@@ -1,7 +1,7 @@
 import * as path from 'path';
 const packageJson = require(path.join(__dirname, '..', 'package.json'));
 
-class MainConst
+export default class MainConst
 {
   static get VERSION(): string
   {
@@ -32,7 +32,7 @@ class MainConst
   z-index: 99999;
   width: 100%;
   height: 100%;
-  opacity: 0.35;
+  opacity: 0.3;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -48,4 +48,3 @@ class MainConst
   }
 }
 
-export default MainConst;
