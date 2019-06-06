@@ -1,6 +1,6 @@
 {
-    "name": "watched-by-parents",
-    "displayName": "Watched By Parents",
+    "name": "language-father-photograph",
+    "displayName": "Language Father Photograph",
     "description": "",
     "version": "0.0.1",
     "engines": {
@@ -18,16 +18,12 @@
     "contributes": {
         "commands": [
             {
-                "command": "extension.helloWorld",
-                "title": "Hello World"
-            },
-            {
                 "command": "extension.enable",
-                "title": "WatchedByParents: Enabel"
+                "title": "LanguageFatherPhotograph: Enabel"
             },
             {
                 "command": "extension.disable",
-                "title": "WatchedByParents: Disabele"
+                "title": "LanguageFatherPhotograph: Disabele"
             }
         ]
     },
