@@ -1,6 +1,6 @@
 # Change Log
 
-All notable changes to the "watched-by-parents" extension will be documented in this file.
+All notable changes to the "language-father-photograph" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
