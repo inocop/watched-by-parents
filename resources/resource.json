@@ -1,0 +1,46 @@
+{
+  "languages": {
+    "ruby": {
+      "credit": "\\\"Yukihiro Matsumoto\\\" by Cep21 is licensed under public domain \\A https://commons.wikimedia.org/wiki/File:Yukihiro_Matsumoto.JPG",
+      "filename": "Yukihiro_Matsumoto.jfif",
+      "width": "319px",
+      "height": "476px"
+    },
+    "python": {
+      "credit": "\\\"Guido van Rossum\\\" by Maartenschrijft is licensed under CC BY-SA 2.0 \\A https://commons.wikimedia.org/wiki/File:Guido_van_Rossum_OSCON_2006_cropped.png",
+      "filename": "Guido_van_Rossum_OSCON_2006_cropped.png",
+      "width": "320px",
+      "height": "480px"
+    },
+    "php": {
+      "credit": "\\\"Rasmus Lerdorf\\\" by Austin512 is licensed under CC BY-SA 2.0 \\A https://commons.wikimedia.org/wiki/File:Rasmus_Lerdorf_cropped.jpg",
+      "filename": "Rasmus_Lerdorf_cropped.jpg",
+      "width": "350px",
+      "height": "473px"
+    },
+    "csharp": {
+      "credit": "\\\"Anders Hejlsberg\\\" by DBegley is licensed under CC BY 2.0 \\A https://commons.wikimedia.org/wiki/File:Anders_Hejlsberg.jpg",
+      "filename": "Anders_Hejlsberg.jpg",
+      "width": "352px",
+      "height": "480px"
+    },
+    "typescript": {
+      "credit": "\\\"Anders Hejlsberg\\\" by DBegley is licensed under CC BY 2.0 \\A https://commons.wikimedia.org/wiki/File:Anders_Hejlsberg.jpg",
+      "filename": "Anders_Hejlsberg.jpg",
+      "width": "352px",
+      "height": "480px"
+    },
+    "javascript": {
+      "credit": "\\\"Brendan Eich\\\" by Darcy Padilla is licensed under CC BY-SA 3.0 \\A https://commons.wikimedia.org/wiki/File:Brendan_Eich_Mozilla_Foundation_official_photo.jpg",
+      "filename": "Brendan_Eich_Mozilla_Foundation_official_photo.jpg",
+      "width": "356px",
+      "height": "479px"
+    },
+    "java": {
+      "credit": "\\\"James Gosling\\\" by Swoon~commonswiki is licensed under CC BY-SA 3.0 \\A https://commons.wikimedia.org/wiki/File:James_Gosling_2005.jpg",
+      "filename": "James_Gosling_2005.jpg",
+      "width": "350px",
+      "height": "481px"
+    }
+  }
+}

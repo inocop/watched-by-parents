@@ -8,17 +8,34 @@ import main from './Main';
 export function activate(context: vscode.ExtensionContext) {
 
     // Enable by command
-    let enableCommand = vscode.commands.registerCommand('extension.enable', () => main.enable());
+    let enableCommand = vscode.commands.registerCommand('extension.enable', () => {
+        if (main.enable()) showInfoRestart("Please reload to enable.");
+    });
     context.subscriptions.push(enableCommand);
 
     // Disable by command
-    let disableCommand = vscode.commands.registerCommand('extension.disable', () => main.disable() );
+    let disableCommand = vscode.commands.registerCommand('extension.disable', () => {
+        if (main.disable()) showInfoRestart("Please reload to disable.");
+    });
     context.subscriptions.push(disableCommand);
 
     // Auto Enable at install and update
-    let autoEnable = vscode.workspace.onDidChangeConfiguration(() => main.enable());
+    let autoEnable = vscode.workspace.onDidChangeConfiguration(() => {
+        if (main.enable()) showInfoRestart("Please reload to enable.");
+    });
     context.subscriptions.push(autoEnable);
 }
+
+
+function showInfoRestart(message: string): void
+{
+    vscode.window.showInformationMessage(message, { title: "Restart VSCode" })
+    .then((item) => {
+        if (!item) return;
+            vscode.commands.executeCommand('workbench.action.reloadWindow');
+    });
+}
+
 
 // this method is called when your extension is deactivated
 export function deactivate() {}

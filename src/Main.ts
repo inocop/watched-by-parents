@@ -12,22 +12,33 @@ import MainConst from './MainConst';
  */
 class Main
 {
-    public enable(): void
+    public enable(): boolean
     {
         let cssContent = this.readMainCss();
 
         if (!this.isCssLatest(cssContent))
         {
             cssContent = this.clearCustomCss(cssContent);
-            cssContent += MainConst.ADD_CSS;
+            cssContent += MainConst.CUSTOM_CSS;
             this.writeMainCss(cssContent);
+            return true;
         }
+
+        return false;
     }
 
-    public disable(): void
+    public disable(): boolean
     {
-        let cssContent = this.clearCustomCss(this.readMainCss());
-        this.writeMainCss(cssContent);
+        let cssContent = this.readMainCss();
+
+        let clearedCss = this.clearCustomCss(cssContent);
+        if (clearedCss != cssContent)
+        {
+            this.writeMainCss(clearedCss);
+            return true;
+        }
+
+        return false;
     }
 
 
@@ -44,13 +55,13 @@ class Main
      */
     private isCssLatest(cssContent: string): boolean
     {
-        let ifUnInstall: boolean = !~cssContent.indexOf(`/*${MainConst.APP_NAME}.ver`);
-        if (ifUnInstall) {
+        let isFirst: boolean = !~cssContent.indexOf(`/*${MainConst.APP_NAME}.ver`);
+        if (isFirst) {
             return false;
         }
 
-        let ifVerOld: boolean = !~cssContent.indexOf(`/*${MainConst.APP_NAME}.ver.${MainConst.VERSION}*/`);
-        if (ifVerOld) {
+        let isOldVer: boolean = !~cssContent.indexOf(`/*${MainConst.APP_NAME}.ver.${MainConst.VERSION}*/`);
+        if (isOldVer) {
             return false;
         }
 

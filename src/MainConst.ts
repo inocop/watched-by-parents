@@ -1,5 +1,8 @@
 import * as path from 'path';
-const packageJson = require(path.join(__dirname, '..', 'package.json'));
+const packageJson  = require(path.join(__dirname, '..', 'package.json'));
+
+const resourcePath = path.join(__dirname, '..', 'resources')
+const resourceJson = require(path.join(resourcePath, 'resource.json'));
 
 export default class MainConst
 {
@@ -13,16 +16,16 @@ export default class MainConst
     return packageJson.name;
   }
 
-  static get ADD_CSS(): string
+  static get CUSTOM_CSS(): string
   {
-    return `
+    let customCss = "";
 
-/*${MainConst.APP_NAME}-start*/
-/*${MainConst.APP_NAME}.ver.${MainConst.VERSION}*/
-
-.editor-container .editor-instance[data-mode-id=ruby] .overflow-guard > .monaco-scrollable-element::after
+    const languages = resourceJson.languages
+    Object.keys(languages).forEach((key) => {
+      customCss += `
+.editor-container .editor-instance[data-mode-id=${key}] .overflow-guard::after
 {
-  content: "\\"Yukihiro Matsumoto\\" by Cep21 is licensed under public domain \\A https://commons.wikimedia.org/wiki/File:Yukihiro_Matsumoto.JPG";
+  content: "${languages[key].credit}";
   white-space: pre;
   font-size: 12.5px;
   pointer-events: none;
@@ -30,21 +33,30 @@ export default class MainConst
   bottom: 0px;
   right: 0px;
   z-index: 99999;
-  width: 100%;
-  height: 100%;
+  width: ${languages[key].width};
+  height: ${languages[key].height};
   opacity: 0.3;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  padding-right: 15px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/Yukihiro_Matsumoto.JPG");
-  background-position: bottom right 15px;
+  border-radius: 50%;
+  margin-right: 15px;
+  background-image: url("${path.join(resourcePath, languages[key].filename).replace(/\\/g, '/')}");
+  background-position: bottom right;
   background-repeat: no-repeat;
-  background-size: 350px auto;
 }
+`
+    });
 
+
+    return `
+
+/*${MainConst.APP_NAME}-start*/
+/*${MainConst.APP_NAME}.ver.${MainConst.VERSION}*/
+${customCss}
 /*${MainConst.APP_NAME}-end*/
 `
   }
 }
+
 
