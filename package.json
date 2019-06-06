@@ -10,7 +10,6 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.helloWorld",
         "onCommand:extension.enable",
         "onCommand:extension.disable"
     ],
