@@ -1,8 +1,8 @@
 import * as path   from 'path';
 import * as fs     from 'fs';
-import * as vscode from 'vscode';
 
 import MainConst from './MainConst';
+import { CssStatusEnum } from './CssStatusEnum';
 
 
 /**
@@ -13,13 +13,14 @@ import MainConst from './MainConst';
  */
 class Main
 {
-    private myConfig = vscode.workspace.getConfiguration('LanguageFatherPhotograph');
-
-    public enable(): boolean
+    public enable(isCommand: boolean = true): boolean
     {
         let cssContent = this.readMainCss();
+        let cssStatus  = this.isCssLatest(cssContent);
 
-        if (!this.isCssLatest(cssContent))
+        if (!isCommand && cssStatus == CssStatusEnum.None) return false;
+
+        if (cssStatus != CssStatusEnum.Latest)
         {
             cssContent = this.clearCustomCss(cssContent);
             cssContent += MainConst.CUSTOM_CSS;
@@ -27,7 +28,6 @@ class Main
             return true;
         }
 
-        this.myConfig.update('enabled', true, vscode.ConfigurationTarget.Global);
         return false;
     }
 
@@ -42,10 +42,8 @@ class Main
             return true;
         }
 
-        this.myConfig.update('enabled', false, vscode.ConfigurationTarget.Global);
         return false;
     }
-
 
     private clearCustomCss(cssContent: string): string
     {
@@ -58,19 +56,19 @@ class Main
     /**
      * Checked CSS status
      */
-    private isCssLatest(cssContent: string): boolean
+    private isCssLatest(cssContent: string): CssStatusEnum
     {
-        let isFirst: boolean = !~cssContent.indexOf(`/*${MainConst.APP_NAME}.ver`);
-        if (isFirst) {
-            return false;
+        let isNone: boolean = !~cssContent.indexOf(`/*${MainConst.APP_NAME}.ver`);
+        if (isNone) {
+            return CssStatusEnum.None;
         }
 
-        let isOldVer: boolean = !~cssContent.indexOf(`/*${MainConst.APP_NAME}.ver.${MainConst.VERSION}*/`);
-        if (isOldVer) {
-            return false;
+        let isOld: boolean = !~cssContent.indexOf(`/*${MainConst.APP_NAME}.ver.${MainConst.VERSION}*/`);
+        if (isOld) {
+            return CssStatusEnum.Old;
         }
 
-        return true
+        return CssStatusEnum.Latest
     }
 
     /**

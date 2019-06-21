@@ -21,12 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     // Change Configuration
     let changeConfig = vscode.workspace.onDidChangeConfiguration(() => {
-        let myConfig = vscode.workspace.getConfiguration('LanguageFatherPhotograph');
-        if (myConfig.get('enabled')) {
-            if (main.enable()) showInfoRestart("Please reload to enable.");
-        } else {
-            if (main.disable()) showInfoRestart("Please reload to disable.");
-        }
+        if (main.enable(false)) showInfoRestart("Please reload to enable.");
     });
     context.subscriptions.push(changeConfig);
 }

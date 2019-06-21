@@ -32,10 +32,3 @@ Command Palette. (Ctrl/Cmd + Shift + P)
 * javascript
 * java
 
-
-## Release Notes
-
-### 0.0.1
-
-Initial release of ...
-

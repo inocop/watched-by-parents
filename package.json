@@ -28,17 +28,7 @@
                 "command": "extension.disable",
                 "title": "LanguageFatherPhotograph: Disabele"
             }
-        ],
-        "configuration": {
-            "title": "Language Father Photograph",
-            "properties": {
-                "LanguageFatherPhotograph.enabled": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Show photo"
-                }
-            }
-        }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
