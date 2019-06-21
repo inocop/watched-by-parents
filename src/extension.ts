@@ -19,11 +19,16 @@ export function activate(context: vscode.ExtensionContext) {
     });
     context.subscriptions.push(disableCommand);
 
-    // Auto Enable at install and update
-    let autoEnable = vscode.workspace.onDidChangeConfiguration(() => {
-        if (main.enable()) showInfoRestart("Please reload to enable.");
+    // Change Configuration
+    let changeConfig = vscode.workspace.onDidChangeConfiguration(() => {
+        let myConfig = vscode.workspace.getConfiguration('LanguageFatherPhotograph');
+        if (myConfig.get('enabled')) {
+            if (main.enable()) showInfoRestart("Please reload to enable.");
+        } else {
+            if (main.disable()) showInfoRestart("Please reload to disable.");
+        }
     });
-    context.subscriptions.push(autoEnable);
+    context.subscriptions.push(changeConfig);
 }
 
 

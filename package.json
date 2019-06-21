@@ -1,9 +1,13 @@
 {
     "publisher": "inocop",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/inocop/language-father-photograph"
+    },
     "name": "language-father-photograph",
     "displayName": "Language Father Photograph",
-    "description": "",
-    "version": "0.0.1",
+    "description": "Show the language father's photo.",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.30.0"
     },
@@ -11,8 +15,7 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.enable",
-        "onCommand:extension.disable"
+        "*"
     ],
     "main": "./out/extension.js",
     "contributes": {
@@ -25,7 +28,17 @@
                 "command": "extension.disable",
                 "title": "LanguageFatherPhotograph: Disabele"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "Language Father Photograph",
+            "properties": {
+                "LanguageFatherPhotograph.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show photo"
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",

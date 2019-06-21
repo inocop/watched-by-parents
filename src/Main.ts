@@ -1,5 +1,6 @@
 import * as path   from 'path';
 import * as fs     from 'fs';
+import * as vscode from 'vscode';
 
 import MainConst from './MainConst';
 
@@ -12,6 +13,8 @@ import MainConst from './MainConst';
  */
 class Main
 {
+    private myConfig = vscode.workspace.getConfiguration('LanguageFatherPhotograph');
+
     public enable(): boolean
     {
         let cssContent = this.readMainCss();
@@ -24,6 +27,7 @@ class Main
             return true;
         }
 
+        this.myConfig.update('enabled', true, vscode.ConfigurationTarget.Global);
         return false;
     }
 
@@ -38,6 +42,7 @@ class Main
             return true;
         }
 
+        this.myConfig.update('enabled', false, vscode.ConfigurationTarget.Global);
         return false;
     }
 
