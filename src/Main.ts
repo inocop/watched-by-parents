@@ -100,7 +100,7 @@ class Main
         }
 
         const basePath = path.dirname(require.main.filename);
-        return path.join(basePath, 'vs', 'workbench', 'workbench.main.css');
+        return path.join(basePath, 'vs', 'workbench', 'workbench.desktop.main.css');
     }
 }
 
