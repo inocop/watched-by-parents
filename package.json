@@ -7,7 +7,7 @@
     "name": "language-father-photograph",
     "displayName": "Language Father Photograph",
     "description": "Show the language father's photo.",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "engines": {
         "vscode": "^1.40.0"
     },
